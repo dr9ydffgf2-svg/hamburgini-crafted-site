@@ -74,10 +74,10 @@
 
   --border: oklch(0.32 0.01 60 / 60%);
   --input: oklch(0.32 0.01 60);
-  --ring: oklch(0.63 0.19 45);
+  --ring: oklch(0.56 0.2 30);
 
   --shadow-cinematic: 0 40px 90px -30px oklch(0 0 0 / 80%);
-  --shadow-accent: 0 20px 60px -25px oklch(0.63 0.19 45 / 55%);
+  --shadow-accent: 0 20px 60px -25px oklch(0.56 0.2 30 / 55%);
 }
 
 @layer base {
