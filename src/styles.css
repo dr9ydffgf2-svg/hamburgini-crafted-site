@@ -58,10 +58,10 @@
   --popover: oklch(0.2 0.009 60);
   --popover-foreground: oklch(0.95 0.014 85);
 
-  /* burnt orange */
-  --primary: oklch(0.63 0.19 45);
+  /* signature logo red */
+  --primary: oklch(0.56 0.2 30);
   --primary-foreground: oklch(0.16 0.008 60);
-  --accent: oklch(0.63 0.19 45);
+  --accent: oklch(0.56 0.2 30);
   --accent-foreground: oklch(0.16 0.008 60);
 
   --secondary: oklch(0.26 0.012 60);
