@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useScrollY } from "@/hooks/use-reveal";
 import { BrandLink } from "./brand-button";
+import logoAsset from "@/assets/hamburgini-logo.jpeg.asset.json";
+
 
 const links = [
   { label: "Home", href: "#home" },
