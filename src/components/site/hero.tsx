@@ -12,11 +12,11 @@ export function Hero() {
     return () => clearTimeout(t);
   }, []);
 
-  const line = (i: number) =>
-    cn(
-      "transition-all duration-1000 ease-brand",
-      ready ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
-    ) + ` [transition-delay:${i}ms]`;
+  const fade = cn(
+    "transition-all duration-1000 ease-brand",
+    ready ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
+  );
+
 
   return (
     <section id="home" className="relative min-h-[100svh] overflow-hidden">
