@@ -7,6 +7,7 @@ import heroBurger from "@/assets/hero-burger.jpg";
 export function Hero() {
   const y = useScrollY();
   const [ready, setReady] = useState(false);
+
   useEffect(() => {
     const t = setTimeout(() => setReady(true), 80);
     return () => clearTimeout(t);
@@ -17,7 +18,6 @@ export function Hero() {
     ready ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
   );
 
-
   return (
     <section id="home" className="relative min-h-[100svh] overflow-hidden">
       <div
@@ -26,7 +26,7 @@ export function Hero() {
       >
         <img
           src={heroBurger}
-          alt="Hamburgini signature double cheeseburger"
+          alt="برجر هامبرجيني"
           width={1600}
           height={1600}
           className={cn(
@@ -35,17 +35,20 @@ export function Hero() {
           )}
         />
       </div>
+
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/40" />
       <div className="absolute inset-0 bg-[radial-gradient(120%_80%_at_50%_120%,transparent,var(--background))] opacity-80" />
 
       <div className="shell relative flex min-h-[100svh] flex-col justify-end pb-16 pt-32 md:justify-center md:pb-28">
         <div className="max-w-3xl">
+
           <p
             className={cn("eyebrow", fade)}
             style={{ transitionDelay: "200ms" }}
           >
-            Est. Urban Burger Craft
+            هامبرجيني — طبرق، ليبيا
           </p>
+
           <h1
             className="display mt-6 text-[clamp(3.2rem,14vw,10rem)]"
             style={{ transitionDelay: "300ms" }}
@@ -57,8 +60,9 @@ export function Hero() {
               )}
               style={{ transitionDelay: "260ms" }}
             >
-              Burgers
+              متميزين
             </span>
+
             <span
               className={cn(
                 "block transition-all duration-1000 ease-brand",
@@ -66,8 +70,9 @@ export function Hero() {
               )}
               style={{ transitionDelay: "380ms" }}
             >
-              Worth
+              بفارق كبير
             </span>
+
             <span
               className={cn(
                 "block text-primary transition-all duration-1000 ease-brand",
@@ -75,7 +80,7 @@ export function Hero() {
               )}
               style={{ transitionDelay: "500ms" }}
             >
-              Craving.
+              عن غيرنا.
             </span>
           </h1>
 
@@ -86,7 +91,7 @@ export function Hero() {
             )}
             style={{ transitionDelay: "640ms" }}
           >
-            Big flavor. Fresh ingredients. Zero compromises.
+            صدقني مش حتكون آخر مرة!
           </p>
 
           <div
@@ -97,17 +102,24 @@ export function Hero() {
             style={{ transitionDelay: "760ms" }}
           >
             <BrandLink href="#order" size="lg" className="w-full sm:w-auto">
-              Order Now
+              اطلب الآن
             </BrandLink>
-            <BrandLink href="#menu" variant="outline" size="lg" className="w-full sm:w-auto">
-              View Menu
+
+            <BrandLink
+              href="#menu"
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto"
+            >
+              شاهد المنيو
             </BrandLink>
           </div>
         </div>
       </div>
 
       <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-3 md:flex">
-        <span className="eyebrow text-[0.6rem]">Scroll</span>
+        <span className="eyebrow text-[0.6rem]">مرر للأسفل</span>
+
         <span className="h-14 w-px overflow-hidden bg-border">
           <span className="block h-full w-full origin-top animate-[pulse_2.4s_ease-in-out_infinite] bg-primary" />
         </span>
