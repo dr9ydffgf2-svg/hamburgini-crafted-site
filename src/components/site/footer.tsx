@@ -1,3 +1,5 @@
+import logoAsset from "@/assets/hamburgini-logo.jpeg.asset.json";
+
 const nav = [
   { label: "Home", href: "#home" },
   { label: "Menu", href: "#menu" },
