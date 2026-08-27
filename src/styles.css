@@ -6,7 +6,7 @@
 
 /*
  * HAMBURGINI design system.
- * Dark charcoal canvas, warm off-white type, burnt orange accent.
+ * Dark charcoal canvas, warm off-white type, signature logo red accent.
  * All colors are oklch tokens. Never hardcode colors in components.
  */
 
@@ -58,10 +58,10 @@
   --popover: oklch(0.2 0.009 60);
   --popover-foreground: oklch(0.95 0.014 85);
 
-  /* burnt orange */
-  --primary: oklch(0.63 0.19 45);
+  /* signature logo red */
+  --primary: oklch(0.56 0.2 30);
   --primary-foreground: oklch(0.16 0.008 60);
-  --accent: oklch(0.63 0.19 45);
+  --accent: oklch(0.56 0.2 30);
   --accent-foreground: oklch(0.16 0.008 60);
 
   --secondary: oklch(0.26 0.012 60);
@@ -74,10 +74,10 @@
 
   --border: oklch(0.32 0.01 60 / 60%);
   --input: oklch(0.32 0.01 60);
-  --ring: oklch(0.63 0.19 45);
+  --ring: oklch(0.56 0.2 30);
 
   --shadow-cinematic: 0 40px 90px -30px oklch(0 0 0 / 80%);
-  --shadow-accent: 0 20px 60px -25px oklch(0.63 0.19 45 / 55%);
+  --shadow-accent: 0 20px 60px -25px oklch(0.56 0.2 30 / 55%);
 }
 
 @layer base {
@@ -120,14 +120,6 @@
   color: var(--color-muted-foreground);
 }
 
-@utility wordmark {
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1;
-}
-
-/* section shell */
 @utility shell {
   width: 100%;
   margin-inline: auto;
