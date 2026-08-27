@@ -76,6 +76,25 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
+  { charSet: "utf-8" },
+  { name: "viewport", content: "width=device-width, initial-scale=1" },
+  { title: "HAMBURGINI — هامبرجيني" },
+  {
+    name: "description",
+    content:
+      "هامبرجيني — طبرق، ليبيا. برجر وسندوتشات وتاكوس وسناكس بطعم يستاهل التجربة.",
+  },
+  { name: "author", content: "Hamburgini" },
+  { name: "theme-color", content: "#231f1d" },
+  { property: "og:title", content: "HAMBURGINI — هامبرجيني" },
+  {
+    property: "og:description",
+    content:
+      "هامبرجيني — طبرق، ليبيا. برجر وسندوتشات وتاكوس وسناكس بطعم يستاهل التجربة.",
+  },
+  { property: "og:type", content: "website" },
+  { name: "twitter:card", content: "summary_large_image" },
+],
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "{ title: "HAMBURGINI — هامبرجيني" }
