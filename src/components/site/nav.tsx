@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useScrollY } from "@/hooks/use-reveal";
 import { BrandLink } from "./brand-button";
-import logoAsset from "@/assets/hamburgini-logo.jpeg";
-import logoAsset from "@/assets/hamburgini-logo.jpeg.asset.json";
+import logoAsset from "@/assets/IMG_4812.jpeg";
+
 const links = [
-  { label: "الرئيسية", href: "#home" },
-  { label: "المنيو", href: "#menu" },
-  { label: "قصتنا", href: "#about" },
-  { label: "الصور", href: "#gallery" },
-  { label: "موقعنا", href: "#location" },
+  { label: "Home", href: "#home" },
+  { label: "Menu", href: "#menu" },
+  { label: "About", href: "#about" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Location", href: "#location" },
 ];
 
 export function SiteNav() {
@@ -27,7 +27,6 @@ export function SiteNav() {
 
   return (
     <header
-      dir="rtl"
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-brand",
         compact
@@ -41,11 +40,10 @@ export function SiteNav() {
           compact ? "h-14 md:h-16" : "h-20 md:h-24",
         )}
       >
-        {/* اللوقو */}
         <a href="#home" className="flex items-center">
           <img
             src={logoAsset}
-            alt="هامبرجيني"
+            alt="Hamburgini"
             className={cn(
               "h-auto w-auto object-contain transition-all duration-500 ease-brand",
               compact ? "max-h-10 md:max-h-11" : "max-h-12 md:max-h-14",
@@ -53,31 +51,29 @@ export function SiteNav() {
           />
         </a>
 
-        {/* القائمة */}
         <nav className="hidden items-center gap-9 lg:flex">
           {links.map((l) => (
             <a
               key={l.label}
               href={l.href}
-              className="relative text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-foreground after:absolute after:-bottom-2 after:right-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-500 after:ease-brand hover:after:w-full"
+              className="relative text-[0.7rem] font-medium uppercase tracking-[0.24em] text-muted-foreground transition-colors duration-300 hover:text-foreground after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-500 after:ease-brand hover:after:w-full"
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        {/* زر الطلب + قائمة الهاتف */}
         <div className="flex items-center gap-3">
           <BrandLink
             href="#order"
             size="sm"
             className="hidden sm:inline-flex"
           >
-            اطلب الآن
+            Order Now
           </BrandLink>
 
           <button
-            aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
+            aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
             className="flex h-11 w-11 flex-col items-center justify-center gap-[6px] lg:hidden"
@@ -106,7 +102,7 @@ export function SiteNav() {
         </div>
       </div>
 
-      {/* قائمة الهاتف */}
+      {/* Mobile menu */}
       <div
         className={cn(
           "fixed inset-x-0 top-0 -z-10 h-screen bg-background transition-all duration-600 ease-brand lg:hidden",
@@ -127,7 +123,9 @@ export function SiteNav() {
                   ? "translate-y-0 opacity-100"
                   : "translate-y-6 opacity-0",
               )}
-              style={{ transitionDelay: `${120 + i * 70}ms` }}
+              style={{
+                transitionDelay: `${120 + i * 70}ms`,
+              }}
             >
               {l.label}
             </a>
@@ -143,9 +141,11 @@ export function SiteNav() {
                 ? "translate-y-0 opacity-100"
                 : "translate-y-6 opacity-0",
             )}
-            style={{ transitionDelay: "520ms" }}
+            style={{
+              transitionDelay: "520ms",
+            }}
           >
-            اطلب الآن
+            Order Now
           </BrandLink>
         </div>
       </div>
