@@ -78,9 +78,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "HAMBURGINI — Burgers Worth Craving" },
+      { title: "{ title: "HAMBURGINI — هامبرجيني" }
+      },
       {
-        name: "description",
+        name: "{
+  name: "description",
+  content: "هامبرجيني — طبرق، ليبيا. برجر وسندوتشات وتاكوس وسناكس بطعم يستاهل التجربة.",
+}",
         content: "Big flavor. Fresh ingredients. Zero compromises. Made to order at Hamburgini.",
       },
       { name: "author", content: "Hamburgini" },
@@ -115,7 +119,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
       <head>
         <HeadContent />
       </head>
