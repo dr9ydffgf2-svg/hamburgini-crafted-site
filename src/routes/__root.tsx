@@ -15,19 +15,27 @@ import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div
+      dir="rtl"
+      className="flex min-h-screen items-center justify-center bg-background px-4"
+    >
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+
+        <h2 className="mt-4 text-xl font-semibold text-foreground">
+          الصفحة غير موجودة
+        </h2>
+
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          الصفحة التي تبحث عنها غير موجودة أو تم نقلها.
         </p>
+
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            العودة للرئيسية
           </Link>
         </div>
       </div>
@@ -35,22 +43,37 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({
+  error,
+  reset,
+}: {
+  error: Error;
+  reset: () => void;
+}) {
   console.error(error);
+
   const router = useRouter();
+
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportLovableError(error, {
+      boundary: "tanstack_root_error_component",
+    });
   }, [error]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div
+      dir="rtl"
+      className="flex min-h-screen items-center justify-center bg-background px-4"
+    >
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
+          حدث خطأ أثناء تحميل الصفحة
         </h1>
+
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          حدث خطأ ما. يمكنك المحاولة مرة أخرى أو العودة إلى الصفحة الرئيسية.
         </p>
+
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => {
@@ -59,13 +82,14 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            حاول مرة أخرى
           </button>
+
           <a
             href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
-            Go home
+            الرئيسية
           </a>
         </div>
       </div>
@@ -73,68 +97,83 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-  { charSet: "utf-8" },
-  { name: "viewport", content: "width=device-width, initial-scale=1" },
-  { title: "HAMBURGINI — هامبرجيني" },
-  {
-    name: "description",
-    content:
-      "هامبرجيني — طبرق، ليبيا. برجر وسندوتشات وتاكوس وسناكس بطعم يستاهل التجربة.",
-  },
-  { name: "author", content: "Hamburgini" },
-  { name: "theme-color", content: "#231f1d" },
-  { property: "og:title", content: "HAMBURGINI — هامبرجيني" },
-  {
-    property: "og:description",
-    content:
-      "هامبرجيني — طبرق، ليبيا. برجر وسندوتشات وتاكوس وسناكس بطعم يستاهل التجربة.",
-  },
-  { property: "og:type", content: "website" },
-  { name: "twitter:card", content: "summary_large_image" },
-],
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "{ title: "HAMBURGINI — هامبرجيني" }
-      },
-      {
-        name: "{
-  name: "description",
-  content: "هامبرجيني — طبرق، ليبيا. برجر وسندوتشات وتاكوس وسناكس بطعم يستاهل التجربة.",
-}",
-        content: "Big flavor. Fresh ingredients. Zero compromises. Made to order at Hamburgini.",
-      },
-      { name: "author", content: "Hamburgini" },
-      { name: "theme-color", content: "#231f1d" },
-     { property: "og:title", content: "HAMBURGINI — هامبرجيني" },
-      {
-        property: "og:description",
-        content: "Big flavor. Fresh ingredients. Zero compromises. Made to order at Hamburgini.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400&display=swap",
-      },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-    ],
-  }),
-  shellComponent: RootShell,
-  component: RootComponent,
-  notFoundComponent: NotFoundComponent,
-  errorComponent: ErrorComponent,
-});
+export const Route =
+  createRootRouteWithContext<{ queryClient: QueryClient }>()({
+    head: () => ({
+      meta: [
+        {
+          charSet: "utf-8",
+        },
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1",
+        },
+        {
+          title: "HAMBURGINI — هامبرجيني",
+        },
+        {
+          name: "description",
+          content:
+            "هامبرجيني — طبرق، ليبيا. برجر وسندوتشات وتاكوس وسناكس بطعم يستاهل التجربة.",
+        },
+        {
+          name: "author",
+          content: "Hamburgini",
+        },
+        {
+          name: "theme-color",
+          content: "#231f1d",
+        },
+        {
+          property: "og:title",
+          content: "HAMBURGINI — هامبرجيني",
+        },
+        {
+          property: "og:description",
+          content:
+            "هامبرجيني — طبرق، ليبيا. برجر وسندوتشات وتاكوس وسناكس بطعم يستاهل التجربة.",
+        },
+        {
+          property: "og:type",
+          content: "website",
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+      ],
+
+      links: [
+        {
+          rel: "stylesheet",
+          href: appCss,
+        },
+        {
+          rel: "preconnect",
+          href: "https://fonts.googleapis.com",
+        },
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossOrigin: "anonymous",
+        },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&family=Anton&display=swap",
+        },
+        {
+          rel: "icon",
+          href: "/favicon.png",
+          type: "image/png",
+        },
+      ],
+    }),
+
+    shellComponent: RootShell,
+    component: RootComponent,
+    notFoundComponent: NotFoundComponent,
+    errorComponent: ErrorComponent,
+  });
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
@@ -142,6 +181,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
+
       <body>
         {children}
         <Scripts />
@@ -155,8 +195,8 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+
       <Toaster position="bottom-right" />
     </QueryClientProvider>
   );
