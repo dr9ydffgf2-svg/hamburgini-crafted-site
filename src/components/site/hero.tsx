@@ -56,7 +56,7 @@ export function Hero() {
             </span>
             <span
               className={cn(
-                "block text-primary transition-all duration-1000 ease-brand",
+                "mt-5 block text-primary transition-all duration-1000 ease-brand md:mt-7",
                 ready ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0",
               )}
               style={{ transitionDelay: "380ms" }}
