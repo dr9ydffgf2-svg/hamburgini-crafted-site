@@ -89,7 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Hamburgini" },
       { name: "theme-color", content: "#231f1d" },
-      { property: "og:title", content: "HAMBURGINI — Burgers Worth Craving" },
+     { property: "og:title", content: "HAMBURGINI — هامبرجيني" },
       {
         property: "og:description",
         content: "Big flavor. Fresh ingredients. Zero compromises. Made to order at Hamburgini.",
