@@ -60,7 +60,7 @@ export function Hero() {
               )}
               style={{ transitionDelay: "260ms" }}
             >
-              متميزين
+             متميزون
             </span>
 
             <span
