@@ -41,7 +41,7 @@ export function Hero() {
       <div className="shell relative flex min-h-[100svh] flex-col justify-end pb-16 pt-32 md:justify-center md:pb-28">
         <div className="max-w-3xl">
           <p
-            className={cn("eyebrow", line(200))}
+            className={cn("eyebrow", fade)}
             style={{ transitionDelay: "200ms" }}
           >
             Est. Urban Burger Craft
