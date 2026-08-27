@@ -38,6 +38,9 @@ export function Gallery() {
     };
   }, [open]);
 
+  const activeShot = open === null ? null : shots[open];
+
+
   return (
     <section id="gallery" className="border-t border-border py-24 md:py-36">
       <div className="shell">
