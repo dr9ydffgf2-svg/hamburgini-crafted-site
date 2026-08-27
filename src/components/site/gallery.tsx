@@ -12,14 +12,46 @@ import drink from "@/assets/menu-drink.jpg";
 import smokehouse from "@/assets/menu-smokehouse.jpg";
 
 const shots = [
-  { src: cheese, alt: "Cheese melting over a seared patty", span: "sm:col-span-2 aspect-square" },
-  { src: grill, alt: "Patties searing on the griddle", span: "aspect-[4/5]" },
-  { src: galleryFries, alt: "Loaded chili cheese fries", span: "aspect-[4/5]" },
-  { src: guests, alt: "Guests enjoying burgers", span: "sm:col-span-2 aspect-[4/3]" },
-  { src: interior, alt: "Hamburgini dining room", span: "aspect-[4/5]" },
-  { src: drink, alt: "Craft cola over ice", span: "aspect-square" },
-  { src: smokehouse, alt: "The Smokehouse burger", span: "aspect-square" },
-  { src: tray, alt: "Burger and fries tray from above", span: "sm:col-span-2 aspect-[4/3]" },
+  {
+    src: cheese,
+    alt: "جبنة تذوب فوق قطعة لحم مشوية",
+    span: "sm:col-span-2 aspect-square",
+  },
+  {
+    src: grill,
+    alt: "قطع اللحم تُشوى على الصاج",
+    span: "aspect-[4/5]",
+  },
+  {
+    src: galleryFries,
+    alt: "بطاطا محملة بالجبنة واللحم",
+    span: "aspect-[4/5]",
+  },
+  {
+    src: guests,
+    alt: "ضيوف يستمتعون بالبرجر",
+    span: "sm:col-span-2 aspect-[4/3]",
+  },
+  {
+    src: interior,
+    alt: "صالة هامبرجيني",
+    span: "aspect-[4/5]",
+  },
+  {
+    src: drink,
+    alt: "مشروب غازي مثلج",
+    span: "aspect-square",
+  },
+  {
+    src: smokehouse,
+    alt: "برجر السموك هاوس",
+    span: "aspect-square",
+  },
+  {
+    src: tray,
+    alt: "صينية برجر وبطاطا من الأعلى",
+    span: "sm:col-span-2 aspect-[4/3]",
+  },
 ];
 
 export function Gallery() {
@@ -27,11 +59,14 @@ export function Gallery() {
 
   useEffect(() => {
     if (open === null) return;
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(null);
     };
+
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
+
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
@@ -40,24 +75,28 @@ export function Gallery() {
 
   const activeShot = open === null ? null : shots[open];
 
-
   return (
     <section id="gallery" className="border-t border-border py-24 md:py-36">
       <div className="shell">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow">Gallery</p>
+          <p className="eyebrow">معرض الصور</p>
+
           <h2 className="display mt-5 text-[clamp(2.2rem,6vw,4.5rem)]">
-            Shot in <span className="text-primary">our kitchen.</span>
+            من داخل <span className="text-primary">مطبخنا.</span>
           </h2>
         </Reveal>
 
         <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-4 md:gap-4">
           {shots.map((s, i) => (
-            <Reveal key={s.alt} delay={(i % 4) * 80} className={cn(s.span)}>
+            <Reveal
+              key={s.alt}
+              delay={(i % 4) * 80}
+              className={cn(s.span)}
+            >
               <button
                 onClick={() => setOpen(i)}
                 className="group relative block h-full w-full overflow-hidden bg-surface"
-                aria-label={`View ${s.alt}`}
+                aria-label={`عرض ${s.alt}`}
               >
                 <img
                   src={s.src}
@@ -65,7 +104,9 @@ export function Gallery() {
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-[1400ms] ease-brand group-hover:scale-[1.08]"
                 />
+
                 <span className="absolute inset-0 bg-background/40 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
                 <span className="absolute bottom-4 left-4 max-w-[80%] text-left text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-foreground opacity-0 transition-all duration-500 ease-brand group-hover:opacity-100">
                   {s.alt}
                 </span>
@@ -84,17 +125,19 @@ export function Gallery() {
         >
           <button
             onClick={() => setOpen(null)}
-            aria-label="Close"
+            aria-label="إغلاق"
             className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center text-muted-foreground transition-colors hover:text-primary"
           >
             <X className="h-6 w-6" />
           </button>
+
           <img
             src={activeShot.src}
             alt={activeShot.alt}
             className="max-h-[86svh] w-auto max-w-full object-contain animate-in zoom-in-95 duration-500"
           />
-          <p className="absolute bottom-6 left-0 right-0 text-center text-[0.65rem] uppercase tracking-[0.25em] text-muted-foreground">
+
+          <p className="absolute bottom-6 left-0 right-0 text-center text-[0.65rem] tracking-[0.15em] text-muted-foreground">
             {activeShot.alt}
           </p>
         </div>
