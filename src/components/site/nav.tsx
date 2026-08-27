@@ -40,14 +40,15 @@ export function SiteNav() {
           compact ? "h-14 md:h-16" : "h-20 md:h-24",
         )}
       >
-        <a
-          href="#home"
-          className={cn(
-            "wordmark transition-all duration-500 ease-brand",
-            compact ? "text-lg md:text-xl" : "text-xl md:text-2xl",
-          )}
-        >
-          Hamburgini
+        <a href="#home" className="flex items-center">
+          <img
+            src={logoAsset.url}
+            alt="Hamburgini"
+            className={cn(
+              "h-auto w-auto object-contain transition-all duration-500 ease-brand",
+              compact ? "max-h-10 md:max-h-11" : "max-h-12 md:max-h-14",
+            )}
+          />
         </a>
 
         <nav className="hidden items-center gap-9 lg:flex">
