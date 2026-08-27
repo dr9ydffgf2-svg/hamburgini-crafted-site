@@ -38,6 +38,9 @@ export function Gallery() {
     };
   }, [open]);
 
+  const activeShot = open === null ? null : shots[open];
+
+
   return (
     <section id="gallery" className="border-t border-border py-24 md:py-36">
       <div className="shell">
@@ -72,7 +75,7 @@ export function Gallery() {
         </div>
       </div>
 
-      {open !== null && (
+      {activeShot && (
         <div
           className="fixed inset-0 z-[60] flex items-center justify-center bg-background/96 p-4 backdrop-blur-md animate-in fade-in duration-300"
           onClick={() => setOpen(null)}
@@ -87,12 +90,12 @@ export function Gallery() {
             <X className="h-6 w-6" />
           </button>
           <img
-            src={shots[open].src}
-            alt={shots[open].alt}
+            src={activeShot.src}
+            alt={activeShot.alt}
             className="max-h-[86svh] w-auto max-w-full object-contain animate-in zoom-in-95 duration-500"
           />
           <p className="absolute bottom-6 left-0 right-0 text-center text-[0.65rem] uppercase tracking-[0.25em] text-muted-foreground">
-            {shots[open].alt}
+            {activeShot.alt}
           </p>
         </div>
       )}
