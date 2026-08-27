@@ -2,13 +2,22 @@ import { Reveal, ImageReveal } from "./reveal";
 import interior from "@/assets/about-interior.jpg";
 
 const pillars = [
-  { title: "Fresh Every Day", copy: "Fresh ingredients prepared daily." },
   {
-    title: "Real Flavor",
-    copy: "Bold sauces, quality ingredients and perfectly cooked burgers.",
+    title: "طازج كل يوم",
+    copy: "مكونات طازجة تُحضّر يوميًا.",
   },
-  { title: "Made to Order", copy: "Every burger is prepared when you order it." },
-  { title: "No Shortcuts", copy: "Quality comes first." },
+  {
+    title: "نكهة حقيقية",
+    copy: "صلصات غنية، مكونات عالية الجودة وبرجر مطهو بإتقان.",
+  },
+  {
+    title: "يُحضّر عند الطلب",
+    copy: "كل برجر يُحضّر خصيصًا عند طلبك.",
+  },
+  {
+    title: "لا مجال للاختصار",
+    copy: "الجودة تأتي أولًا.",
+  },
 ];
 
 export function About() {
@@ -16,22 +25,24 @@ export function About() {
     <section id="about" className="border-t border-border py-24 md:py-36">
       <div className="shell grid items-center gap-14 lg:grid-cols-2 lg:gap-24">
         <Reveal>
-          <p className="eyebrow">About Hamburgini</p>
+          <p className="eyebrow">عن هامبرجيني</p>
+
           <h2 className="display mt-5 text-[clamp(2.4rem,7vw,5rem)]">
-            More than <br />
-            <span className="text-primary">a burger.</span>
+            أكثر من <br />
+            <span className="text-primary">مجرد برجر.</span>
           </h2>
+
           <p className="mt-8 max-w-lg text-base leading-relaxed text-muted-foreground md:text-lg">
-            At Hamburgini, we believe a great burger starts with great ingredients. Freshly
-            prepared, generously stacked and cooked to perfection — every burger is made to deliver
-            serious flavor.
+            في هامبرجيني، نؤمن بأن البرجر الرائع يبدأ من مكونات رائعة.
+            مكونات طازجة، تحضير متقن، وحشوة سخية — كل برجر نعدّه ليمنحك
+            نكهة تستحق التجربة.
           </p>
         </Reveal>
 
         <ImageReveal className="relative aspect-[4/5] w-full lg:aspect-[7/8]">
           <img
             src={interior}
-            alt="Hamburgini dining room at night"
+            alt="صالة هامبرجيني ليلًا"
             loading="lazy"
             width={1408}
             height={1600}
@@ -42,8 +53,9 @@ export function About() {
 
       <div className="shell mt-24 md:mt-36">
         <Reveal>
-          <p className="eyebrow">Why Hamburgini</p>
+          <p className="eyebrow">لماذا هامبرجيني؟</p>
         </Reveal>
+
         <div className="mt-10 grid gap-px border-t border-border sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((p, i) => (
             <Reveal
@@ -54,7 +66,9 @@ export function About() {
               <span className="text-xs font-semibold tracking-[0.3em] text-primary">
                 0{i + 1}
               </span>
+
               <h3 className="display mt-6 text-2xl">{p.title}</h3>
+
               <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
                 {p.copy}
               </p>
