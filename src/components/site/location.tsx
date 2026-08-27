@@ -22,8 +22,7 @@ export function Location() {
             id="order"
             className="display mt-5 scroll-mt-32 text-[clamp(2.2rem,6.5vw,5rem)]"
           >
-            تعال جوعان.{" "}
-            <span className="text-primary">وارجع مبسوط.</span>
+            اطلب <span className="text-primary">واستمتع.</span>
           </h2>
         </Reveal>
 
