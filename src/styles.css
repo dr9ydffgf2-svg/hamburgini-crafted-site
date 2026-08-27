@@ -120,14 +120,6 @@
   color: var(--color-muted-foreground);
 }
 
-@utility wordmark {
-  font-family: var(--font-display);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  line-height: 1;
-}
-
-/* section shell */
 @utility shell {
   width: 100%;
   margin-inline: auto;
