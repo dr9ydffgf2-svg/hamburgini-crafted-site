@@ -17,7 +17,11 @@ export function SiteFooter() {
       <div className="shell">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <p className="wordmark text-[clamp(2.4rem,9vw,6rem)]">Hamburgini</p>
+            <img
+              src={logoAsset.url}
+              alt="Hamburgini"
+              className="h-auto max-h-20 w-auto object-contain md:max-h-28"
+            />
             <p className="mt-5 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-primary">
               Burgers worth craving.
             </p>
